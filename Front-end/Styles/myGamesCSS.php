@@ -57,14 +57,19 @@ button:hover {
     background-color: <?php echo $buttonHoverColor; ?>;
 }
 
-input[type="text"]{
-    width: 50%;
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
+input[type="text"],
+input[type="password"] {
     padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid <?php echo $inputBorderColor; ?>;
+    margin: 10px 0;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box;
+    font-size: 16px;
 }
 
 input[type="submit"] {
