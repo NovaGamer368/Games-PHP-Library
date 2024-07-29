@@ -1,9 +1,10 @@
 <?php
 include_once "./Front-end/Header.php"
     ?>
-    <p>About page</p>
+    <h1>GOALS page</h1>
 
 <?php
+include "./Front-end/AboutDetails.php";
 include_once "./Front-end/Footer.php"
     ?>
 
