@@ -9,6 +9,6 @@
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Back-End\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
 </Project>

@@ -17,7 +17,6 @@ h1 {
 
 html {
     text-align: center;
-    background-color: red;
 }
 
 p {
