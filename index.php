@@ -1,5 +1,7 @@
 <?php
 include_once "./Front-end/Header.php"
     ?>
-    <p>Home page</p>
-
+    <h1>Home page</h1>
+<?php
+include_once "./Front-end/Home/WebsiteDescription.php"
+?>
