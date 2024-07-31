@@ -40,23 +40,13 @@ function ConnGet()
 
     return $dbConn;
 }
-function MyJoinWhereGet($dbConn, $id)
-{
-    $stmt = $dbConn->prepare("SELECT Name, Class, STR, DEX, `INT` FROM CharacterTable WHERE charId = ?");
-    // Bind the parameter
-    $stmt->bind_param("i", $id);
-    // Execute the query
-    $stmt->execute();
-    // Get the result
-    $result = $stmt->get_result();
-    return $result;
-}
 
-function MyGetName($dbConn, $name)
+function MyLogin($dbConn, $username, $password)
 {
-    $stmt = $dbConn->prepare("SELECT Name, Class, STR, DEX, `INT` FROM CharacterTable WHERE Name = ?");
+    $stmt = $dbConn->prepare("SELECT Username, isAdmin FROM UsersTable WHERE Username = ? AND Password = ?");
     // Bind the parameter
-    $stmt->bind_param("s", $name);
+    $stmt->bind_param("s", $username);   
+    $stmt->bind_param("s", $password);
     // Execute the query
     $stmt->execute();
     // Get the result

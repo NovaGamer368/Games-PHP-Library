@@ -4,6 +4,20 @@ create database if not exists GamesDatabase;
 
 use GamesDatabase;
 
+
+drop table if exists UsersTable;
+
+create table if not exists UsersTable(
+	userId int NOT NULL AUTO_INCREMENT,
+	Username varchar(100) NOT NULL,
+	Password varchar(100) NOT NULL,
+    isAdmin boolean NOT NULL,
+	PRIMARY KEY (userId)
+);
+ INSERT INTO UsersTable (Username, Password, isAdmin)
+VALUES ("admin", "admin", true);
+
+
 drop table if exists GamesTable;
 
 create table if not exists GamesTable(
