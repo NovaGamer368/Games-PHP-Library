@@ -1,53 +1,43 @@
 <?php
-include_once "dbConnector.php";
+
+session_start();
+include_once "./dbConnector.php";
 
 header('Content-Type: application/json');
 
-$myJSON = "";
-// Process if there is a parameter (id)
+$response = array();
+
+// Process if there is a parameter (username and password)
 if (array_key_exists("username", $_GET) && array_key_exists("password", $_GET)) {
     // Get the db connection
     $myDbConn = ConnGet();
     $myUsername = $_GET["username"];
     $myPassword = $_GET["password"];
 
-    $dataSet = MyUserLogin($myDbConn, $myUsername, $myPassword);
-    // Get the records
+    $dataSet = MyLogin($myDbConn, $myUsername, $myPassword);
+
     // If the data exists, format the values
     if ($dataSet) {
         // Fetch associative array
         if ($row = mysqli_fetch_assoc($dataSet)) {
-            $myJSON = json_encode(array(
+            $_SESSION['username'] = $row['Username']; 
+            $_SESSION['isAdmin'] = $row['isAdmin']; 
+
+            $response = array(
+                "status" => "success",
                 "Username" => $row['Username'],
                 "isAdmin" => $row['isAdmin']
-            ));
+            );
+        } else {
+            $response = array("status" => "error", "message" => "Invalid credentials.");
         }
+    } else {
+        $response = array("status" => "error", "message" => "Query failed.");
     }
     mysqli_close($myDbConn);
+} else {
+    $response = array("status" => "error", "message" => "Missing parameters.");
 }
 
-if (array_key_exists("name", $_GET)) {
-    // Get the db connection
-    // Get the data
-    $myDbConn = ConnGet();
-    $myGet = $_GET["name"];
-    // Get the records
-    $dataSet = MyGetName($myDbConn, $myGet);
-
-    // If the data exists, format the values
-    if ($dataSet) {
-        // $myJSON = "[";
-        if ($row = mysqli_fetch_array($dataSet)) {
-            $myJSON = json_encode(array(
-                "Name" => $row['Name'],
-                "Class" => $row['Class'],
-                "STR" => $row['STR'],
-                "DEX" => $row['DEX'],
-                "INT" => $row['INT']
-            ));}
-    }
-    mysqli_close($myDbConn);
-}
-
-echo $myJSON;
+echo json_encode($response);
 ?>

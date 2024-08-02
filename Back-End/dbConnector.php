@@ -44,9 +44,8 @@ function ConnGet()
 function MyLogin($dbConn, $username, $password)
 {
     $stmt = $dbConn->prepare("SELECT Username, isAdmin FROM UsersTable WHERE Username = ? AND Password = ?");
-    // Bind the parameter
-    $stmt->bind_param("s", $username);   
-    $stmt->bind_param("s", $password);
+    // Bind the parameters
+    $stmt->bind_param("ss", $username, $password);
     // Execute the query
     $stmt->execute();
     // Get the result

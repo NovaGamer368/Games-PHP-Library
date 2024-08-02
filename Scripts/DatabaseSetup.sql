@@ -14,8 +14,14 @@ create table if not exists UsersTable(
     isAdmin boolean NOT NULL,
 	PRIMARY KEY (userId)
 );
- INSERT INTO UsersTable (Username, Password, isAdmin)
+INSERT INTO UsersTable (Username, Password, isAdmin)
 VALUES ("admin", "admin", true);
+INSERT INTO UsersTable (Username, Password, isAdmin)
+VALUES ("test", "test", false);
+INSERT INTO UsersTable (Username, Password, isAdmin)
+VALUES ("test2", "test2", false);
+
+select * from UsersTable;
 
 
 drop table if exists GamesTable;
