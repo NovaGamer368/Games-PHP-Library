@@ -24,7 +24,7 @@
             let myResponse;
             let myData;
             // Create a table for display
-            let myReturn = "<center><table><tr><td>Name &nbsp;  &nbsp; </td><td>Creator &nbsp;  &nbsp; </td><td>Genre &nbsp;  &nbsp; </td><td>Description &nbsp;  &nbsp; </td></tr>";
+            let myReturn = "<center><table><tr><td>Name &nbsp;  &nbsp; </td><td>Creator &nbsp;  &nbsp; </td></tr>";
 
             myResponse = request.responseText;
             //alert("A: " + myResponse); // Use for debugging
@@ -35,9 +35,7 @@
             for (let index in myData) {
                 myReturn += "<tr><td>" +
                     myData[index].Name + "</td><td>" +
-                    myData[index].Creator + "</td><td>" +
-                    myData[index].Genre + "</td><td>" +
-                    myData[index].Description + "</td></tr>";
+                    myData[index].Creator + "</td>";
                    
             }
             myReturn += "</table><center>";

@@ -2,6 +2,7 @@
 <p id="B"></p> <!--DEBUG PURPOSES-->
 <p id="jsonData">No Games found!</p>
 <script>
+
     // Create a new XMLHttpRequest object
     const request = new XMLHttpRequest();
 
@@ -24,7 +25,7 @@
             let myResponse;
             let myData;
             // Create a table for display
-            let myReturn = "<center><table><tr><td>Name &nbsp;  &nbsp; </td><td>Creator &nbsp;  &nbsp; </td><td>Genre &nbsp;  &nbsp; </td><td>Description &nbsp;  &nbsp; </td></tr>";
+            let myReturn = "<center><table><tr><td>Name &nbsp;  &nbsp; </td><td>Description &nbsp;  &nbsp; </td></tr>";
 
             myResponse = request.responseText;
             //alert("A: " + myResponse); // Use for debugging
@@ -34,11 +35,8 @@
             // Loop through each JSON record and create the HTML
             for (let index in myData) {
                 myReturn += "<tr><td>" +
-                    myData[index].Name + "</td><td>" +
-                    myData[index].Creator + "</td><td>" +
-                    myData[index].Genre + "</td><td>" +
+                    myData[index].Name + "</td><td>"  +
                     myData[index].Description + "</td></tr>";
-                   
             }
             myReturn += "</table><center>";
             document.getElementById("jsonData").innerHTML = myReturn; // Display table

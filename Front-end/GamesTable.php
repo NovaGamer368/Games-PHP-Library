@@ -2,6 +2,7 @@
 <p id="B"></p> <!--DEBUG PURPOSES-->
 <p id="jsonData">No Games found!</p>
 <script>
+
     // Create a new XMLHttpRequest object
     const request = new XMLHttpRequest();
 
@@ -38,7 +39,6 @@
                     myData[index].Creator + "</td><td>" +
                     myData[index].Genre + "</td><td>" +
                     myData[index].Description + "</td></tr>";
-                   
             }
             myReturn += "</table><center>";
             document.getElementById("jsonData").innerHTML = myReturn; // Display table
