@@ -11,5 +11,7 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] === 0) {
     <h1>Admin page</h1>
 <?php
 // Admin page details CRUD
+include "./Back-End/Admin/Create.php";
+include "./Back-End/Admin/Update.php";
 include_once "./Front-end/Footer.php";
 ?>
