@@ -15,8 +15,15 @@
             <span><a href="games.php">Games</a></span> &nbsp; &nbsp;
              <?php
                 if (isset($_SESSION['username'])) {
+                    if(isset($_SESSION['isAdmin']))
+                    {
+                        if($_SESSION['isAdmin'] == 1){
+                         echo '<span><a href="admin.php">Admin Page</a></span> &nbsp; &nbsp;';
+                        }
+                    }
                     echo '<span>Welcome, ' . htmlspecialchars($_SESSION['username']) . '!</span> &nbsp; &nbsp;';
                     echo '<span><a href="logout.php">Logout</a></span> &nbsp; &nbsp;';
+
                 } else {
                     echo '<span><a href="login.php">Login</a></span> &nbsp; &nbsp;';
                 }
