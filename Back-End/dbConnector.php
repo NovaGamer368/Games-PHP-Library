@@ -53,6 +53,20 @@ function MyLogin($dbConn, $username, $password)
     return $result;
 }
 
+function myNewGame ($dbConn, $name, $creator, $genre, $description)
+{
+
+    $stmt = $dbConn->prepare("INSERT INTO GamesTable (name, creator, genre, description) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $creator, $genre, $description);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success', 'message' => 'Record inserted successfully.']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Error inserting record: ' . $stmt->error]);
+    }
+}
+
 
 // Get all records
 function MyJsonGet($dbConn) {

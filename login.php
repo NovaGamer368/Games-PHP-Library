@@ -56,23 +56,6 @@ include_once "./Front-end/Header.php"
 
         }
 
-//   function loadComplete(evt) {
-//       let request = evt.target; 
-//       alert("LOAD CALLED");
-//    if (request.status >= 200 && request.status < 300) {
-//        let myResponse;
-//        let myData;
-//        myResponse = request.responseText;
-//        myData = JSON.parse(myResponse);
-//        //document.getElementById("B").innerHTML = myData; // Display the JSON for debugging
-
-//        console.log("Response data: ", myData);
-//        //document.getElementById("jsonData").innerHTML = myReturn; // Display table
-//    } else {
-//        document.getElementById("A").innerHTML = "Failed to load data. Status: " + request.status;
-//    }
-//}
-
 </script>
 <?php
 include_once "./Front-end/Footer.php"
