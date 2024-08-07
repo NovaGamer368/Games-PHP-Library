@@ -15,6 +15,7 @@ include_once "../../Front-end/Header.php";
             <input type="text" id="GameDescInput" placeholder="Description"/>
              <button name="a" onclick="myClickEvent()">Create</button>
              <button name="a" onclick="updateClickEvent()">Update</button>       
+             <button name="a" onclick="deleteClickEvent()">Delete</button>    
             </form>
     </center>
     <script>
@@ -63,6 +64,42 @@ include_once "../../Front-end/Header.php";
             request.send(postData);
         }
 </script>
+ <script>
+     function deleteClickEvent() {
+            if (document.getElementById("GameIdInput").value) {
+                loadDeleteJson(
+                    document.getElementById("GameIdInput").value
+                );
+            } else {
+                alert("All fields are required.");
+            }
+        }
+
+        function loadDeleteJson(id) {
+            var request = new XMLHttpRequest();
+            request.open('POST', './Back-End/apiSqlQuery.php', true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    if (request.status === 200) {
+                        alert("Game successfully Deleted!");
+                    } else {
+                        alert("Error: " + request.message);
+                    }
+                } else {
+                    alert("Error: " + request.status);
+                }
+            };
+
+            request.onerror = function () {
+                alert("Request failed");
+            };
+
+            var postData = `_method=DELETE&id=${encodeURIComponent(id)}`;
+            request.send(postData);
+        }
+    </script>
  <script>
      function updateClickEvent() {
             if (document.getElementById("GameIdInput").value && 

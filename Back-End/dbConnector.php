@@ -65,6 +65,18 @@ function updateGame($dbConn, $id, $name, $creator, $genre, $description)
         echo json_encode(['status' => 'error', 'message' => 'Error updating record: ' . $stmt->error]);
     }
 }
+function deleteGame($dbConn, $id)
+{
+    $stmt = $dbConn->prepare("DELETE FROM GamesTable WHERE gameId = ?");
+    $stmt->bind_param("i", $id);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success', 'message' => 'Record deleted successfully.']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Error deleting record: ' . $stmt->error]);
+    }
+}
 
 function myNewGame ($dbConn, $name, $creator, $genre, $description)
 {

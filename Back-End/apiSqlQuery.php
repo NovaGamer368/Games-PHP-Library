@@ -25,7 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         updateGame($myDbConn, $id, $name, $creator, $genre, $description);
-    } else {
+    }
+    else if ($method === 'DELETE') {
+        $id = $_POST['id'] ?? '';
+
+        if (empty($id) ) {
+            echo json_encode(['status' => 'error', 'message' => 'All fields are required for deleting.']);
+            exit;
+        }
+
+        deleteGame($myDbConn, $id);
+    }else {
         $name = $_POST['name'] ?? '';
         $creator = $_POST['creator'] ?? '';
         $genre = $_POST['genre'] ?? '';
