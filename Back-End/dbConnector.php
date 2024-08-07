@@ -53,6 +53,19 @@ function MyLogin($dbConn, $username, $password)
     return $result;
 }
 
+function updateGame($dbConn, $id, $name, $creator, $genre, $description)
+{
+    $stmt = $dbConn->prepare("UPDATE GamesTable SET name=?, creator=?, genre=?, description=? WHERE gameId=?");
+    $stmt->bind_param("ssssi", $name, $creator, $genre, $description, $id);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success', 'message' => 'Record updated successfully.']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Error updating record: ' . $stmt->error]);
+    }
+}
+
 function myNewGame ($dbConn, $name, $creator, $genre, $description)
 {
 
