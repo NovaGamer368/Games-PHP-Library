@@ -5,7 +5,28 @@
 <html>
     <head>
         <title>Games PHP Library</title>
-        <link rel="stylesheet" type="text/css" href="./Front-end/Styles/myGamesCSS.php">
+        <?php
+        $_SESSION["darkMode"] = 0;
+        if ($_SESSION["darkMode"] == 1) {
+            echo '<link rel="stylesheet" type="text/css" href="./Front-end/Styles/myGamesDarkCSS.php">';
+        } else {
+            echo '<link rel="stylesheet" type="text/css" href="./Front-end/Styles/myGamesCSS.php">';
+        }
+        ?>
+        <script>
+            function toggleDarkMode()
+            {
+                if (<?php echo $_SESSION['darkMode']?>) {
+                    if (<?php echo $_SESSION['darkMode'] ?> == 1) {
+                        <?php $_SESSION['darkMode'] = 0?>
+                    } else {
+                        <?php $_SESSION['darkMode'] = 1?>
+                    }
+                } else {
+                    <?php $_SESSION['darkMode'] = 1?>
+                }             
+            }
+        </script>
     </head>
     <body>  
         <h1>Games PHP Library</h1>
@@ -28,4 +49,5 @@
                     echo '<span><a href="login.php">Login</a></span> &nbsp; &nbsp;';
                 }
                 ?>
+            <button type="button" onclick="toggleDarkMode()">Toggle Dark Mode</button>            
         </div> 

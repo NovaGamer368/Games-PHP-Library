@@ -13,7 +13,7 @@ time, I enjoy playing Final Fantasy XIV and getting out to play ice hockey</p>
 
 <hr />
 <h3>Joey Kaasch </h3>
-<p>DESCRIPTION OF JOEY</p>
+<p>I am a full stack developer. I like doing more of the backend, but I am able to do the front end if needed.</p>
 
 <hr />
 <h3>Jonathan Brickwedde</h3>
