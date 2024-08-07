@@ -17,5 +17,8 @@ time, I enjoy playing Final Fantasy XIV and getting out to play ice hockey</p>
 
 <hr />
 <h3>Jonathan Brickwedde</h3>
-<p>DESCRIPTION OF JONATHAN</p>
+    <p>firly motivated, and determined full stack developer. i love working with people to make applications that i hope user's enjoy.
+    I like seeing how people can think of interesting ideas and seeing how they go about doing them. when im working on my own, 
+    i prefer to atleast have the company of my friends to keep me company. in my spare time i enjoy playing a variety of games,
+    watching movies when able, and simply hanging out with those i call friends.</p>
 
