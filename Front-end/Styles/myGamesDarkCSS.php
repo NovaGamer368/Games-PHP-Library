@@ -1,8 +1,8 @@
 <?php
-$tableBorderColor = "red";
+$tableBorderColor = "blue";
 $textColor = "#ccc";
-$buttonBgColor = "red";
-$buttonHoverColor = "lightred";
+$buttonBgColor = "blue";
+$buttonHoverColor = "lightblue";
 $inputBorderColor = "#ccc";
 $navBgColor = "#bfbfbf";
 $navLinkColor = "#007bff";
