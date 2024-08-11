@@ -4,7 +4,7 @@ $textColor = "#ccc";
 $buttonBgColor = "blue";
 $buttonHoverColor = "lightblue";
 $inputBorderColor = "#ccc";
-$navBgColor = "#bfbfbf";
+$navBgColor = "#424242";
 $navLinkColor = "#007bff";
 $navLinkHoverColor = "#0056b3";
 ?>
@@ -17,7 +17,7 @@ h1 {
 
 html {
     text-align: center;
-    background: black;
+    background: #08202A;
     color: white;
 }
 
