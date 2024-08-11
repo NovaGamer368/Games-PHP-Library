@@ -4,7 +4,7 @@ $textColor = "#333";
 $buttonBgColor = "red";
 $buttonHoverColor = "lightred";
 $inputBorderColor = "#ccc";
-$navBgColor = "#f8f9fa";
+$navBgColor = "#f0f1f2";
 $navLinkColor = "#007bff";
 $navLinkHoverColor = "#0056b3";
 ?>
