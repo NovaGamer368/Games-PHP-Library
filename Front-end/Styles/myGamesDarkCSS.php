@@ -1,11 +1,11 @@
 <?php
-$tableBorderColor = "blue";
+$tableBorderColor = "red";
 $textColor = "#ccc";
-$buttonBgColor = "blue";
-$buttonHoverColor = "lightblue";
+$buttonBgColor = "#9c1a1a";
+$buttonHoverColor = "lightred";
 $inputBorderColor = "#ccc";
 $navBgColor = "#424242";
-$navLinkColor = "#007bff";
+$navLinkColor = "#ff0000";
 $navLinkHoverColor = "#0056b3";
 ?>
 
@@ -17,8 +17,8 @@ h1 {
 
 html {
     text-align: center;
-    background: #08202A;
-    color: white;
+    background: #08202a;
+    color: #f0f0f0;
 }
 
 p {

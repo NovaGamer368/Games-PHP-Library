@@ -25,7 +25,7 @@
             let myResponse;
             let myData;
             // Create a table for display
-            let myReturn = "<center><table><tr><td>Name &nbsp;  &nbsp; </td></tr>";
+            let myReturn = "<center><table><tr><td><b>Name</b> &nbsp;  &nbsp; </td></tr>";
 
             myResponse = request.responseText;
             //alert("A: " + myResponse); // Use for debugging
