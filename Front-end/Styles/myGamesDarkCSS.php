@@ -18,14 +18,15 @@ h1 {
 html {
     text-align: center;
     background: #08202a;
-    color: #f0f0f0;
+    color: white;
 }
 
 p {
     font-size: 16px;
     color: <?php echo $textColor; ?>;
     line-height: 1.5;
-    margin: 10px 0;
+    margin: 10px 100px;
+    text-align:left;
 }
 
 table {

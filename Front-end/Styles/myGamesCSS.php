@@ -23,7 +23,8 @@ p {
     font-size: 16px;
     color: <?php echo $textColor; ?>;
     line-height: 1.5;
-    margin: 10px 0;
+    margin: 10px 100px;
+    text-align:left;
 }
 
 table {

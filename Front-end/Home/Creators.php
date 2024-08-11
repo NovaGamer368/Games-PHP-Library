@@ -2,7 +2,7 @@
 <br />
 <br />
 <br />
-<h2>Creators</h2>
+<h1>Creators</h1>
 
 <hr />
 <h3>Brennan Phifer</h3>
