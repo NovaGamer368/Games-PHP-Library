@@ -16,7 +16,7 @@ include_once "../../Front-end/Header.php";
             <input type="text" id="GameGenreInput" placeholder="Genre"/>
             
             <input type="text" id="GameDescInput" placeholder="Description"/>
-             <button name="a" onclick="myClickEvent()">Create</button>
+             <button name="a" onclick="createClickEvent()">Create</button>
             <p>in order to use the "CREATE" button, you must fill in all boxes except the "Id" box.</p>
              <button name="a" onclick="updateClickEvent()">Update</button>       
             <p>in order to use the "UPDATE" button, you must fill in all boxes.</p>
@@ -27,12 +27,12 @@ include_once "../../Front-end/Header.php";
 
 <!--Create-->
 <script>
-    function myClickEvent() {
+    function createClickEvent() {
         if (document.getElementById("GameNameInput").value && 
             document.getElementById("GameCreatorInput").value && 
             document.getElementById("GameGenreInput").value && 
             document.getElementById("GameDescInput").value) {
-            loadJson(
+            loadCreateJson(
                 document.getElementById("GameNameInput").value, 
                 document.getElementById("GameCreatorInput").value, 
                 document.getElementById("GameGenreInput").value, 
@@ -47,7 +47,7 @@ include_once "../../Front-end/Header.php";
         }
     }
 
-    function loadJson(name, creator, genre, description) {
+    function loadCreateJson(name, creator, genre, description) {
         var request = new XMLHttpRequest();
         request.open('POST', './Back-End/apiSqlQuery.php', true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -76,16 +76,16 @@ include_once "../../Front-end/Header.php";
 <!--delete-->
  <script>
      function deleteClickEvent() {
-            if (document.getElementById("GameIdInput").value) {
+            if (document.getElementById("GameNameInput").value) {
                 loadDeleteJson(
-                    document.getElementById("GameIdInput").value
+                    document.getElementById("GameNameInput").value
                 );
             } else {
-                alert("All fields are required.");
+                alert("The name of the game is required.");
             }
         }
 
-        function loadDeleteJson(id) {
+        function loadDeleteJson(name) {
             var request = new XMLHttpRequest();
             request.open('POST', './Back-End/apiSqlQuery.php', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -105,8 +105,7 @@ include_once "../../Front-end/Header.php";
             request.onerror = function () {
                 alert("Request failed");
             };
-
-            var postData = `_method=DELETE&id=${encodeURIComponent(id)}`;
+            var postData = `_method=DELETE&name=${name}`;
             request.send(postData);
         }
     </script>

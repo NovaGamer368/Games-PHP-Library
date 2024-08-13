@@ -1,10 +1,8 @@
 <?php
-
 session_start();
 include_once "./dbConnector.php";
 
 header('Content-Type: application/json');
-
 $response = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         updateGame($myDbConn, $id, $name, $creator, $genre, $description);
     }
     else if ($method === 'DELETE') {
-        $id = $_POST['id'] ?? '';
+        $id = $_POST['name'] ?? '';
 
         if (empty($id) ) {
             echo json_encode(['status' => 'error', 'message' => 'All fields are required for deleting.']);

@@ -67,8 +67,8 @@ function updateGame($dbConn, $id, $name, $creator, $genre, $description)
 }
 function deleteGame($dbConn, $id)
 {
-    $stmt = $dbConn->prepare("DELETE FROM GamesTable WHERE gameId = ?");
-    $stmt->bind_param("i", $id);
+    $stmt = $dbConn->prepare("DELETE FROM GamesTable WHERE Name = ?");
+    $stmt->bind_param("s", $id);
 
     // Execute the query
     if ($stmt->execute()) {
