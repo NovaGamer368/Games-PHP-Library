@@ -19,6 +19,7 @@ session_start();
         <span><a href="index.php">Home</a></span> &nbsp; &nbsp;
         <span><a href="about.php">About</a></span> &nbsp; &nbsp;
         <span><a href="games.php">Games</a></span> &nbsp; &nbsp;
+        <span><a href="search.php">Search</a></span> &nbsp; &nbsp;
         <?php
         if (isset($_SESSION['username'])) {
             if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) {
