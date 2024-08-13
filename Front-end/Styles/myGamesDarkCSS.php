@@ -30,6 +30,14 @@ html {
         text-align: left;
     }
 
+    li {
+    font-size: 16px;
+    color: <?php echo $textColor; ?>;
+    line-height: 1.5;
+    margin: 10px 70px;
+    text-align: left;
+     }
+
 table {
     width: 45%;
     border-collapse: collapse;

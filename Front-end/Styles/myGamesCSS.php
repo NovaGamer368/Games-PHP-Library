@@ -24,9 +24,17 @@ p {
     font-size: 16px;
     color: <?php echo $textColor; ?>;
     line-height: 1.5;
-    margin: 10px 100px;
+    margin: 10px 70px;
     text-align:left;
 }
+
+    li {
+    font-size: 16px;
+    color: <?php echo $textColor; ?>;
+    line-height: 1.5;
+    margin: 10px 70px;
+    text-align: left;
+     }
 
 table {
     width: 100%;
@@ -42,7 +50,7 @@ table th, table td {
 }
 
 button {
-    background-color: <?php echo $buttonBgColor; ?>; 
+    background-color: <?php echo $buttonBgColor; ?>;
     border: none;
     color: white;
     padding: 10px 20px;
