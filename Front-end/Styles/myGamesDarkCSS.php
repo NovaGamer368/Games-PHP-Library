@@ -2,7 +2,7 @@
 $tableBorderColor = "red";
 $textColor = "#ccc";
 $buttonBgColor = "#9c1a1a";
-$buttonHoverColor = "lightred";
+$buttonHoverColor = "red";
 $inputBorderColor = "#ccc";
 $navBgColor = "#424242";
 $navLinkColor = "#ff0000";
@@ -19,6 +19,7 @@ html {
     text-align: center;
     background: #08202a;
     color: white;
+    font-family: "Franklin Gothic Book";
 }
 
 p {
@@ -89,6 +90,17 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: <?php echo $buttonHoverColor; ?>;
 }
+
+.onlyGames {
+    width: 20%
+}
+
+.showGames{
+    min-width: 800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 .navbar {
     background-color: <?php echo $navBgColor; ?>;
     padding: 10px;
