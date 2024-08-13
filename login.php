@@ -6,7 +6,7 @@ include_once "./Front-end/Header.php"
         <div>
              <input type="text" id="usernameInput" placeholder="Username"/>
              <input type="password" id="passwordInput" placeholder="Password"/>
-            <button name="a" onclick="myClickEvent()">Submit</button>
+            <button name="a" onclick="LoginEvent()">Submit</button>
             
         </div>
 <p id="A"></p>
@@ -15,7 +15,7 @@ include_once "./Front-end/Header.php"
 
     </center>
 <script>
-    function myClickEvent() {
+    function LoginEvent() {
         if (document.getElementById("passwordInput").value && document.getElementById("usernameInput").value) {
             //alert("calling JSON");
             loadJson(document.getElementById("usernameInput").value, document.getElementById("passwordInput").value)

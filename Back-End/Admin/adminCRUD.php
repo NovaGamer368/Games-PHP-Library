@@ -2,8 +2,6 @@
 include_once "../../Front-end/Header.php";
 ?>
 
-
-
     <center >
         <p id="A"></p> <!--DEBUG PURPOSES-->
         <p id="B"></p> <!--DEBUG PURPOSES-->
@@ -85,29 +83,30 @@ include_once "../../Front-end/Header.php";
             }
         }
 
-        function loadDeleteJson(name) {
-            var request = new XMLHttpRequest();
-            request.open('POST', './Back-End/apiSqlQuery.php', true);
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    function loadDeleteJson(name) {            
+        alert('deleted');
+        var request = new XMLHttpRequest();
+        request.open('POST', './Back-End/apiSqlQuery.php', true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-            request.onload = function () {
-                if (request.status >= 200 && request.status < 400) {
-                    if (request.status === 200) {
-                        alert("Game successfully Deleted!");
-                    } else {
-                        alert("Error: " + request.message);
-                    }
+        request.onload = function () {
+            if (request.status >= 200 && request.status < 400) {
+                if (request.status === 200) {
+                    alert("Game successfully Deleted!");
                 } else {
-                    alert("Error: " + request.status);
+                    alert("Error: " + request.message);
                 }
-            };
+            } else {
+                alert("Error: " + request.status);
+            }
+        };
 
-            request.onerror = function () {
-                alert("Request failed");
-            };
-            var postData = `_method=DELETE&name=${name}`;
-            request.send(postData);
-        }
+        request.onerror = function () {
+            alert("Request failed");
+        };
+        var postData = `_method=DELETE&name=${name}`;
+        request.send(postData);
+    }
     </script>
 
 <!--Update-->

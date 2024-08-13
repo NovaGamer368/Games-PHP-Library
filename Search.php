@@ -22,38 +22,30 @@ if (isset($_POST['selectedIndex'])) {
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" value="1">search Games!</button>
                 <div>
-    
                     <label for="Filter">Filter</label>
                     <select name="Filter" id="filter">
                         <option value="">--- Choose a Filter ---</option>
                         <option value="Genre">Genre</option>
                         <option value="Creator" selected>Creator</option>
                     </select>
-
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" value="3">Filter Games!</button>
                 <!--<button type="submit" name="selectedIndex" value="2">search Genre!</button>-->
-
-
-
-
             </div>
         </form>
     </div>
 </center>
-
+<script>
+    //function SearchName() {
+    //    var request = new XMLHttpRequest();
+        //var name = document.getElementById("GameSearchInput");
+    //    if (name) {
+    //        request.open('GET', './Back-End/apiJsonQuery.php?name=' + encodeURIComponent(name), true)
+    //    }
+    //    request.send();
+    //}
+</script>
 <?php
-switch ($selectedIndex) {
-    case 1:
-        include "./Front-end/Games/GamesTable.php";
-        break;
-    /*    case 2:
-        include "./Front-end/Games/GamesNameGenre.php";
-        break;*/
-    case 3:
-        include "./Front-end/Games/GamesNameCreator.php";
-        break;
-}
-
+include_once "./Front-end/Games/GamesSearch.php";
 include_once "./Front-end/Footer.php";
 ?>

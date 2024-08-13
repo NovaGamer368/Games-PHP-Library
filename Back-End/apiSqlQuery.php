@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        myNewGame($myDbConn, $name, $creator, $genre, $description);
+        createGame($myDbConn, $name, $creator, $genre, $description);
     }
 
     $myDbConn->close();
