@@ -65,9 +65,6 @@ form {
     width: 25%;
 }
 
-form div button {
-    padding: 5px;
-}
 input[type="text"],
 input[type="password"] {
     padding: 10px;

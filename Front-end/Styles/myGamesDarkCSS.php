@@ -19,18 +19,27 @@ html {
     text-align: center;
     background: #08202a;
     color: white;
+    font-family: franklin gothic book;
 }
 
-p {
-    font-size: 16px;
-    color: <?php echo $textColor; ?>;
-    line-height: 1.5;
-    margin: 10px 100px;
-    text-align:left;
-}
+    p {
+        font-size: 16px;
+        color: <?php echo $textColor; ?>;
+        line-height: 1.5;
+        margin: 10px 100px;
+        text-align: left;
+
+    }
 
 table {
-    width: 100%;
+    width: 45%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 2px solid <?php echo $tableBorderColor; ?>;
+}
+
+table1 {
+    width: 25%;
     border-collapse: collapse;
     margin: 20px 0;
     border: 2px solid <?php echo $tableBorderColor; ?>;
@@ -43,7 +52,7 @@ table th, table td {
 }
 
 button {
-    background-color: <?php echo $buttonBgColor; ?>; 
+    background-color: <?php echo $buttonBgColor; ?>;
     border: none;
     color: white;
     padding: 10px 20px;

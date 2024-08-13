@@ -19,7 +19,7 @@ if (isset($_POST['selectedIndex'])) {
     <div>
         <form method="post">
             <div>
-                <button type="submit" name="selectedIndex" value="1">Show Games!</button>
+                <button type="submit" name="selectedIndex" value="1">Show Games! (images coming soon!!)</button>
                 <button type="submit" name="selectedIndex" value="2">Show Games Description</button>
             </div>
             <div>
