@@ -78,7 +78,7 @@ function deleteGame($dbConn, $id)
     }
 }
 
-function myNewGame ($dbConn, $name, $creator, $genre, $description)
+function createGame ($dbConn, $name, $creator, $genre, $description)
 {
 
     $stmt = $dbConn->prepare("INSERT INTO GamesTable (name, creator, genre, description) VALUES (?, ?, ?, ?)");
@@ -94,7 +94,7 @@ function myNewGame ($dbConn, $name, $creator, $genre, $description)
 
 
 // Get all records
-function MyJsonGet($dbConn) {
+function GamesGet($dbConn) {
     $query = "SELECT JSON_OBJECT(
 	'gameId', g.gameId,
     'Name', g.Name,
@@ -104,4 +104,15 @@ function MyJsonGet($dbConn) {
     ) 
     FROM GamesTable AS g;";
     return @mysqli_query($dbConn, $query);
+}
+
+function GameSearch($dbConn, $name)
+{
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Name', g.Name, 'Creator', g.Creator, 'Genre', g.Genre, 'Description', g.Description) FROM GamesTable AS g WHERE Name = ?");
+    $stmt->bind_param("s", $name);
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+    return $result;
+    //return @mysqli_query($dbConn, $query);
 }
