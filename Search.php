@@ -45,7 +45,7 @@ if (isset($_POST['selectedIndex'])) {
 <?php
 switch ($selectedIndex) {
     case 1:
-        include "./Front-end/Games/GamesTable.php";
+        include "./Front-end/Games/GamesSearch.php";
         break;
     /*    case 2:
         include "./Front-end/Games/GamesNameGenre.php";
