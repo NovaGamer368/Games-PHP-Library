@@ -22,9 +22,19 @@ if (isset($_POST['selectedIndex'])) {
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" value="1">search Games!</button>
                 <div>
+    
+                    <label for="Filter">Filter</label>
+                    <select name="Filter" id="filter">
+                        <option value="">--- Choose a Filter ---</option>
+                        <option value="Genre">Genre</option>
+                        <option value="Creator" selected>Creator</option>
+                    </select>
+
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
-                <button type="submit" name="selectedIndex" value="3">search Creator!</button>
+                <button type="submit" name="selectedIndex" value="3">Filter Games!</button>
                 <!--<button type="submit" name="selectedIndex" value="2">search Genre!</button>-->
+
+
 
 
             </div>
