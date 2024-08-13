@@ -1,6 +1,9 @@
 <?php
 include_once "../../Front-end/Header.php";
 ?>
+
+
+
     <center >
         <p id="A"></p> <!--DEBUG PURPOSES-->
         <p id="B"></p> <!--DEBUG PURPOSES-->
@@ -14,10 +17,15 @@ include_once "../../Front-end/Header.php";
             
             <input type="text" id="GameDescInput" placeholder="Description"/>
              <button name="a" onclick="myClickEvent()">Create</button>
+            <p>in order to use the "CREATE" button, you must fill in all boxes except the "Id" box.</p>
              <button name="a" onclick="updateClickEvent()">Update</button>       
+            <p>in order to use the "UPDATE" button, you must fill in all boxes.</p>
              <button name="a" onclick="deleteClickEvent()">Delete</button>    
+            <p>in order to use the "DELETE" button, you only need to fill it the "Name" box (check grammar & spelling).</p>
             </form>
     </center>
+
+<!--Create-->
 <script>
     function myClickEvent() {
         if (document.getElementById("GameNameInput").value && 
@@ -64,6 +72,8 @@ include_once "../../Front-end/Header.php";
         request.send(postData);
     }
 </script>
+
+<!--delete-->
  <script>
      function deleteClickEvent() {
             if (document.getElementById("GameIdInput").value) {
@@ -100,6 +110,8 @@ include_once "../../Front-end/Header.php";
             request.send(postData);
         }
     </script>
+
+<!--Update-->
  <script>
      function updateClickEvent() {
             if (document.getElementById("GameIdInput").value && 
