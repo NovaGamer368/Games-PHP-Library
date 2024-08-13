@@ -17,16 +17,14 @@ if (isset($_POST['selectedIndex'])) {
 <!--<h1>SELECTED INDEX <?php echo $selectedIndex ?></h1>-->
 <center>
     <div>
-        <form method="post">
+        <form method="post" class="showGames">
             <div>
                 <button type="submit" name="selectedIndex" value="1">Show Games! (images coming soon!!)</button>
                 <button type="submit" name="selectedIndex" value="2">Show Games Description</button>
-            </div>
-            <div>
                 <button type="submit" name="selectedIndex" value="3">Show Games Genre</button>
                 <button type="submit" name="selectedIndex" value="4">Show Games Creator</button>
+                <button type="submit" name="selectedIndex" value="5">Show Everything about games!</button>
             </div>
-            <button type="submit" name="selectedIndex" value="5">Show Everything about games!</button>
         </form>
     </div>
 </center>
