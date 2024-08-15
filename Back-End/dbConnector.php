@@ -1,5 +1,5 @@
 <?php
-include_once ('./Back-End/apiSqlQuery.php');
+//include_once './Back-End/apiSqlQuery.php';
 
 loadEnv(__DIR__ . '/../.env');
 define('DB_USER', getenv('DB_USER'));
