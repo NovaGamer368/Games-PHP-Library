@@ -37,7 +37,7 @@ p {
      }
 
 table {
-    width: 100%;
+    width: 45%;
     border-collapse: collapse;
     margin: 20px 0;
     border: 2px solid <?php echo $tableBorderColor; ?>;

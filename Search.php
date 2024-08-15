@@ -30,11 +30,13 @@ if (isset($_POST['selectedIndex'])) {
                     </select>
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" value="3">Filter Games!</button>
+
                 <!--<button type="submit" name="selectedIndex" value="2">search Genre!</button>-->
             </div>
         </form>
     </div>
 </center>
+
 <script>
     //function SearchName() {
     //    var request = new XMLHttpRequest();
@@ -45,6 +47,7 @@ if (isset($_POST['selectedIndex'])) {
     //    request.send();
     //}
 </script>
+
 <?php
 include_once "./Front-end/Games/GamesSearch.php";
 include_once "./Front-end/Footer.php";
