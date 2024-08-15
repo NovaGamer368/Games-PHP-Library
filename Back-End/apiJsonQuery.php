@@ -1,13 +1,10 @@
 <?php
 session_start();
 include_once "./dbConnector.php";
-
 header('Content-Type: application/json');
-
 $myDbConn = ConnGet();
-
-if (array_key_exists("name", $_GET)) {
-    $myJsonResult = GameSearch($myDbConn, $_GET["name"]);
+if (array_key_exists("gsi", $_GET) && isset($_SESSION['gsi']) && $_SESSION['gsi'] != "") {
+    $myJsonResult = GameSearch($myDbConn, $_SESSION['gsi']);
 } else {
     $myJsonResult = GamesGet($myDbConn);
 }

@@ -1,6 +1,6 @@
 <?php
-include_once "./Front-end/Header.php"
-    ?>
+include_once "./Front-end/Header.php";  
+?>
     <h1>Login page</h1>
     <center>
         <div>
@@ -17,46 +17,37 @@ include_once "./Front-end/Header.php"
 <script>
     function LoginEvent() {
         if (document.getElementById("passwordInput").value && document.getElementById("usernameInput").value) {
-            //alert("calling JSON");
-            loadJson(document.getElementById("usernameInput").value, document.getElementById("passwordInput").value)
+            loadJson(document.getElementById("usernameInput").value, document.getElementById("passwordInput").value);
         }
     }
 
-        function loadJson(username, password) {
-            var request = new XMLHttpRequest();
-            //alert("username: " + username);
-            //alert("password: " + password);
-        
-            request.open('GET', './Back-End/apiSqlQuery.php?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), true);
-
-            //DEBUGGING
-
-            request.onload = function () {
-                if (request.status >= 200 && request.status < 400) {
-                    // Success!
-                    var data = JSON.parse(request.responseText);
-                    console.log("Response data: ", data);
-                    if (data.status === "success") {
-                        //alert("Username: " + data.Username + "\nAdmin: " + data.isAdmin);
-                        window.location.href = "http://localhost:30126/index.php"; 
-                    } else {
-                        alert("Error: " + data.message);
-                    }
+    function loadJson(username, password) {
+        var request = new XMLHttpRequest();
+        request.open('GET', './Back-End/apiSqlQuery.php?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), true);
+        //DEBUGGING
+        request.onload = function () {
+            if (request.status >= 200 && request.status < 400) {
+                // Success!
+                var data = JSON.parse(request.responseText);
+                console.log("Response data: ", data);
+                if (data.status === "success") {
+                    //alert("Username: " + data.Username + "\nAdmin: " + data.isAdmin);
+                    window.location.href = "http://localhost:30126/index.php"; 
                 } else {
-                    // We reached our target server, but it returned an error
-                    alert("Error: " + request.status);
+                    alert("Error: " + data.message);
                 }
+            } else {
+                // We reached our target server, but it returned an error
+                alert("Error: " + request.status);
             }
-                 request.onerror = function () {
-                     // There was a connection error of some sort
-                     alert("Request failed");
-                 };
-            //request.onload = loadComplete;
-            request.send();
-
         }
-
+        request.onerror = function () {
+            // There was a connection error of some sort
+            alert("Request failed");
+        };
+        request.send();
+    }
 </script>
 <?php
 include_once "./Front-end/Footer.php"
-    ?>
+?>

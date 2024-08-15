@@ -1,4 +1,3 @@
-<?php  include_once "Search.php" ?>
 <p id="A"></p> <!--DEBUG PURPOSES-->
 <p id="B"></p> <!--DEBUG PURPOSES-->
 <p id="jsonData">No Games found!</p>
@@ -14,9 +13,7 @@
 
     // Call the microservice and get the data
     function loadJson() {
-        let inputs = document.querySelectorAll('input[type="text"]');
-        let input1 = inputs[0].value;
-        request.open('GET', './Back-End/apiJsonQuery.php?name=' + encodeURIComponent(input1), true)
+        request.open('GET', './Back-End/apiJsonQuery.php?gsi=true', true);
         request.onload = loadComplete;
         request.send();
     }

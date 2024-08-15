@@ -20,7 +20,7 @@ if (isset($_POST['selectedIndex'])) {
         <form method="post" class="showGames">
             <div>
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
-                <button type="submit" name="selectedIndex" value="1">search Games!</button>
+                <button type="submit" name="selectedIndex" onclick="GSI()" value="1">search Games!</button>
                 <div>
                     <label for="Filter">Filter</label>
                     <select name="Filter" id="filter">
@@ -38,14 +38,19 @@ if (isset($_POST['selectedIndex'])) {
 </center>
 
 <script>
-    //function SearchName() {
-    //    var request = new XMLHttpRequest();
-        //var name = document.getElementById("GameSearchInput");
-    //    if (name) {
-    //        request.open('GET', './Back-End/apiJsonQuery.php?name=' + encodeURIComponent(name), true)
-    //    }
-    //    request.send();
-    //}
+    async function GSI() {
+        if (document.getElementById("GameSearchInput").value) {
+            var gsi = document.getElementById("GameSearchInput").value;
+            var request = new XMLHttpRequest();
+            request.open('GET', './Back-End/SearchBackend.php?gsi=' + encodeURIComponent(gsi), true);
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert("Request failed");
+            };
+            await request.send();
+            //await GSI(document.getElementById("GameSearchInput").value);
+        }
+    }
 </script>
 
 <?php
