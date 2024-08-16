@@ -15,12 +15,14 @@ include_once "./Front-end/Header.php";
 
     </center>
 <script>
+//checks login data when user logs in
     function LoginEvent() {
         if (document.getElementById("passwordInput").value && document.getElementById("usernameInput").value) {
             loadJson(document.getElementById("usernameInput").value, document.getElementById("passwordInput").value);
         }
     }
 
+    //makes sure the data is inside the database
     function loadJson(username, password) {
         var request = new XMLHttpRequest();
         request.open('GET', './Back-End/apiSqlQuery.php?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), true);

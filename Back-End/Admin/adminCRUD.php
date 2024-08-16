@@ -5,7 +5,9 @@ include_once "../../Front-end/Header.php";
     <center >
         <p id="A"></p> <!--DEBUG PURPOSES-->
         <p id="B"></p> <!--DEBUG PURPOSES-->
+
         <form>
+        <!--front end, allows user to interact with the crud operations-->
             <input type="text" id="GameIdInput" placeholder="Game Id"/>
             <input type="text" id="GameNameInput" placeholder="Name"/>
             
@@ -23,7 +25,7 @@ include_once "../../Front-end/Header.php";
             </form>
     </center>
 
-<!--Create-->
+<!--Creates the objects in the database/table-->
 <script>
     function createClickEvent() {
         if (document.getElementById("GameNameInput").value && 
@@ -71,7 +73,7 @@ include_once "../../Front-end/Header.php";
     }
 </script>
 
-<!--delete-->
+<!--deletes the objects in the database/table by name-->
  <script>
      function deleteClickEvent() {
             if (document.getElementById("GameNameInput").value) {
@@ -109,7 +111,7 @@ include_once "../../Front-end/Header.php";
     }
     </script>
 
-<!--Update-->
+<!--Updates the objects in the database/table by id -->
  <script>
      function updateClickEvent() {
             if (document.getElementById("GameIdInput").value && 

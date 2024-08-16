@@ -19,6 +19,7 @@ if (isset($_POST['selectedIndex'])) {
     <div>
         <form method="post" class="showGames">
             <div>
+                <!--allows users to look at all information about all games in the database in certain ways-->
                 <button type="submit" name="selectedIndex" value="1">Show Games! (images coming soon!!)</button>
                 <button type="submit" name="selectedIndex" value="2">Show Games Description</button>
                 <button type="submit" name="selectedIndex" value="3">Show Games Genre</button>
@@ -31,6 +32,7 @@ if (isset($_POST['selectedIndex'])) {
 
 <?php
 switch ($selectedIndex) {
+    //toggled between when the user presses on any of the buttons
     case 1:
         include "./Front-end/Games/GamesName.php";
         break;

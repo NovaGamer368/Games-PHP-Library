@@ -6,9 +6,12 @@ session_start();
 <head>
     <title>Games PHP Library</title>
     <?php
+        //echos the dark and light modes
     if (isset($_COOKIE["darkMode"]) && $_COOKIE["darkMode"] == "1") {
+        // dark mode
         echo '<link rel="stylesheet" type="text/css" href="./Front-end/Styles/myGamesDarkCSS.php">';
     } else {
+        // light mode
         echo '<link rel="stylesheet" type="text/css" href="./Front-end/Styles/myGamesCSS.php">';
     }
     ?>
@@ -16,12 +19,15 @@ session_start();
 <body>
     <h1>Games PHP Library</h1>
     <div class="navbar">
+        
+        <!--navigation bar links-->
         <span><a href="index.php">Home</a></span> &nbsp; &nbsp;
         <span><a href="about.php">About</a></span> &nbsp; &nbsp;
         <span><a href="games.php">Games</a></span> &nbsp; &nbsp;
         <span><a href="search.php">Search & Filter</a></span> &nbsp; &nbsp;
         <span><a href="IndividualPages.php">Individual pages</a></span> &nbsp; &nbsp;
 
+        <!--checks if user is logged in and lets them see the link to the admin pages + color mode button if they are-->
         <?php
         if (isset($_SESSION['username'])) {
             if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) {
@@ -35,6 +41,7 @@ session_start();
         ?>
         <button type="submit" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
+
 
     <script>
         function toggleDarkMode() {

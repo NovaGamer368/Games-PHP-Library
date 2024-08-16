@@ -19,9 +19,11 @@ if (isset($_POST['selectedIndex'])) {
     <div>
         <form method="post" class="showGames">
             <div>
+                <!--search block for user to type in what they wanna search for-->
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" onclick="GSI()" value="1">search Games!</button>
                 <div>
+                    <!--allows user to look for games of a specific genre/made by a certain company-->
                     <label for="Filter">Filter</label>
                     <select name="Filter" id="filter">
                         <option value="">--- Choose a Filter ---</option>
@@ -38,6 +40,7 @@ if (isset($_POST['selectedIndex'])) {
 </center>
 
 <script>
+    //searches for game
     async function GSI() {
         if (document.getElementById("GameSearchInput").value) {
             var gsi = document.getElementById("GameSearchInput").value;
