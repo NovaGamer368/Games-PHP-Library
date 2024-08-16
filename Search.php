@@ -13,7 +13,7 @@ if (isset($_POST['selectedIndex'])) {
 <hr />
 <p>This page lets someone search and filter for a specific game or specific information in the database</p>
 <br />
-<p>The main attributes of these games are their Name, Creator, Genre and Description,  this page allows you to filter by the name, genre, and creatore of a game.</p>
+<p>The main attributes of these games are their Name, Creator, Genre and Description,  this page allows you to search for a game or filter by a genre.</p>
 <!--<h1>SELECTED INDEX <?php echo $selectedIndex ?></h1>-->
 <center>
     <div>
@@ -21,19 +21,25 @@ if (isset($_POST['selectedIndex'])) {
             <div>
                 <!--search block for user to type in what they wanna search for-->
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
-                <button type="submit" name="selectedIndex" onclick="GSI()" value="1">search Games!</button>
+                <button type="submit" name="selectedIndex" onclick="GSI()" value="1">Search Games!</button>
                 <div>
                     <!--allows user to look for games of a specific genre/made by a certain company-->
                     <label for="Filter">Filter</label>
-                    <select name="Filter" id="filter">
-                        <option value="">--- Choose a Filter ---</option>
-                        <option value="Genre">Genre</option>
-                        <option value="Creator" selected>Creator</option>
+                    <select id="FilterOptions">
+                        <?php
+                        $genreJSON = $_SESSION['genres'];
+                        $genres = json_decode($genreJSON);
+                        $list = "";
+                        foreach ($genres as $genre) {
+                            $g = $genre->Genre;
+                            $list .= "<option>" . $g . "</option>";
+                        }
+                        echo $list;
+                        ?>
                     </select>
-                <input type="text" id="GameSearchInput" placeholder="Search"/>
-                <button type="submit" name="selectedIndex" value="3">Filter Games!</button>
-
-                <!--<button type="submit" name="selectedIndex" value="2">search Genre!</button>-->
+                <button type="submit" name="selectedIndex" onclick="GSI()" value="2">Filter Games!</button>
+                </div>
+                <!--<button type="submit" name="selectedIndex" value="3">search Genre!</button>-->
             </div>
         </form>
     </div>
@@ -42,21 +48,32 @@ if (isset($_POST['selectedIndex'])) {
 <script>
     //searches for game
     async function GSI() {
+        
+        var request = new XMLHttpRequest();
         if (document.getElementById("GameSearchInput").value) {
             var gsi = document.getElementById("GameSearchInput").value;
-            var request = new XMLHttpRequest();
             request.open('GET', './Back-End/SearchBackend.php?gsi=' + encodeURIComponent(gsi), true);
-            request.onerror = function () {
-                // There was a connection error of some sort
-                alert("Request failed");
-            };
-            await request.send();
             //await GSI(document.getElementById("GameSearchInput").value);
+        } else if (document.getElementById("FilterOptions").value) {
+            var genre = document.getElementById("FilterOptions").value;
+            request.open('GET', './Back-End/SearchBackend.php?genre=' + encodeURIComponent(genre), true);
         }
+        request.onerror = function () {
+            // There was a connection error of some sort
+            alert("Request failed");
+        };
+        await request.send();
     }
 </script>
 
 <?php
-include_once "./Front-end/Games/GamesSearch.php";
+switch($selectedIndex) {
+    case 1:
+        include_once "./Front-end/Games/GamesSearch.php";
+        break;
+    case 2:
+        include_once "./Front-end/Games/GamesFilter.php";
+        break;
+}
 include_once "./Front-end/Footer.php";
 ?>

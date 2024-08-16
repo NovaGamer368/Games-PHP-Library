@@ -114,5 +114,25 @@ function GameSearch($dbConn, $name)
     // Get the result
     $result = $stmt->get_result();
     return $result;
-    //return @mysqli_query($dbConn, $query);
 }
+
+function GameGenresGet($dbConn)
+{
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Genre', g.Genre) FROM GamesTable AS g GROUP BY Genre ORDER BY Genre ASC");
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+    return $result;
+}
+
+function GameFilterGenre($dbConn, $genre)
+{
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Name', g.Name, 'Creator', g.Creator, 'Genre', g.Genre, 'Description', g.Description) FROM GamesTable AS g WHERE Genre = ?");
+    $stmt->bind_param("s", $genre);
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+    return $result;
+}
+
+?>

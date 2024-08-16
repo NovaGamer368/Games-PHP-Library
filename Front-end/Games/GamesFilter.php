@@ -13,7 +13,7 @@
 
     // Call the microservice and get the data
     function loadJson() {
-        request2.open('GET', './Back-End/apiJsonQuery.php?gsi=true', true);
+        request2.open('GET', './Back-End/apiJsonQuery.php?filter=true', true);
         request2.onload = loadComplete;
         request2.send();
     }

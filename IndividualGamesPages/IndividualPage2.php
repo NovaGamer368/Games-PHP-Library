@@ -6,7 +6,7 @@ include_once "./Front-end/Header.php"
 <h2>Cuphead</h2>
 
 <!--img link to image-->
-<img width="1200" height="700" src="https://www.google.com/imgres?q=cuphead&imgurl=https%3A%2F%2Fassets.nintendo.com%2Fimage%2Fupload%2Far_16%3A9%2Cc_lpad%2Cw_1240%2Fb_white%2Ff_auto%2Fq_auto%2Fncom%2Fsoftware%2Fswitch%2F70010000016330%2Fd94d2186ef03c930392253c83c84af0c73b7e57cd902a526b09b4155a25930fe&imgrefurl=https%3A%2F%2Fwww.nintendo.com%2Fus%2Fstore%2Fproducts%2Fcuphead-switch%2F&docid=M-7-kgj31BgQkM&tbnid=Lvi3YGOGvqBFvM&vet=12ahUKEwi3qeHZl_iHAxXYEDQIHfucIrYQM3oECBkQAA..i&w=1240&h=698&hcb=2&ved=2ahUKEwi3qeHZl_iHAxXYEDQIHfucIrYQM3oECBkQAA"/>
+<img width="1200" height="700" src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000016330/d94d2186ef03c930392253c83c84af0c73b7e57cd902a526b09b4155a25930fe"/>
 
 <p>publisher: Studio MDHR</p>
 <p>developer: Studio MDHR</p>
