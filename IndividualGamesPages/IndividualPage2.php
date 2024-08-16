@@ -11,7 +11,8 @@ include_once "./Front-end/Header.php"
 <p>publisher: Studio MDHR</p>
 <p>developer: Studio MDHR</p>
 <p>Genre: Platformer</p>
-
+<p>Release: September 29, 2017</p>
+<div/>
 <p>description: Cuphead is a run-and-gun platformer known for its challenging gameplay and hand-drawn, 1930s
     cartoon-inspired visuals. Battle unique bosses, dodge intricate patterns, and uncover hidden secrets in this beautifully 
     animated world.</p>

@@ -11,7 +11,8 @@ include_once "./Front-end/Header.php"
 <p>Developer: Square Enix</p>
 <p>Publisher: Squar Enix</p>
 <p>Genre: MMORPG</p>
-
+<p>Release: August 2013</p>
+<div/>
 <p>description: 	In this massively multiplayer online RPG, you'll share your experience with countless other players who 
     populate the world, either passing them a wave as you scoot by on your own errands, or teaming up to conquer dungeons or 
     fell powerful enemies together.</p>

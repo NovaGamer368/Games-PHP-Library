@@ -11,7 +11,8 @@ include_once "./Front-end/Header.php"
 <p>Publisher: Supergiant games</p>
 <p>Developer: Supergiant games</p>
 <p>Genre: Roguelike</p>
-
+<p>Release: December 10, 2019</p>
+<div/>
 <p>description: 	Hades is a roguelike dungeon crawler where you play as Zagreus, the son of Hades, attempting to escape the 
     Underworld. Battle through procedurally generated levels, encounter unique characters, and uncover the story with each 
     attempt.</p>
