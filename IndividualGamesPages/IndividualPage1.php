@@ -10,6 +10,7 @@ include_once "./Front-end/Header.php"
 <p>Genre: MMORPG</p>
 <p>Platforms:  PS5,PS4, Xbox Series X/S, Windows, Mac</p>
 <p>Avalable on: Steam, Square Enix Store, finalfantasyxiv.com</p>
+ <p>* = not entirely sure</p>
 
 
 <?php
