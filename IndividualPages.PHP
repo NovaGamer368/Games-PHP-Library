@@ -45,7 +45,7 @@ if (isset($_POST['selectedIndex'])) {
             
             <!--3 buttons that load the 3 individual pages-->
             <div>
-                <button type="submit" name="selectedIndex"  value="1">next</button>
+                <button type="submit" name="selectedIndex"  value="1">Page 1</button>
                 <button type="submit" name="selectedIndex" value="2">Page 2</button>
                 <button type="submit" name="selectedIndex" value="3">Page 3 </button>
             </div>
