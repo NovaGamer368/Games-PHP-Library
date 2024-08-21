@@ -48,6 +48,7 @@ if (isset($_POST['selectedIndex'])) {
                 <button type="submit" name="selectedIndex"  value="1">Page 1</button>
                 <button type="submit" name="selectedIndex" value="2">Page 2</button>
                 <button type="submit" name="selectedIndex" value="3">Page 3 </button>
+                <button type="submit" name="selectedIndex" value="4">Image Gallery</button>
             </div>
         </form>
     </div>
@@ -64,6 +65,9 @@ switch ($selectedIndex) {
         break;
     case 3:
         include_once "./IndividualGamesPages/IndividualPage3.php";
+        break;
+    case 4:
+        include_once "./IndividualGamesPages/image gallery/ImageGallery.php";
         break;
 }
 
