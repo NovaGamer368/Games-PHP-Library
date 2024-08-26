@@ -208,4 +208,12 @@ SELECT JSON_OBJECT(
 FROM GamesTable AS g;
 
 
+drop table if exists ImagesTable;
 
+create table if not exists ImagesTable(
+	imageId int NOT NULL AUTO_INCREMENT,
+	gameImage blob NOT NULL,
+	gameName varchar(100) NOT NULL,,
+    gameId int NOT NULL REFERENCES GamesTable(gameID),
+	PRIMARY KEY (imageId)
+);

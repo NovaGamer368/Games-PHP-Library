@@ -67,7 +67,7 @@ switch ($selectedIndex) {
         include_once "./IndividualGamesPages/IndividualPage3.php";
         break;
     case 4:
-        include_once "./IndividualGamesPages/image gallery/ImageGallery.php";
+        include_once "./IndividualGamesPages/imageGallery/ImageGallery.php";
         break;
 }
 
