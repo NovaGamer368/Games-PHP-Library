@@ -135,4 +135,13 @@ function GameFilterGenre($dbConn, $genre)
     return $result;
 }
 
+function GetGameById($dbConn, $id) {
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Name', g.Name, 'Creator', g.Creator, 'Genre', g.Genre, 'Description', g.Description) FROM GamesTable AS g WHERE gameId = ?");
+    $stmt->bind_param("s", $id);
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+    return $result;
+}
+
 ?>

@@ -19,6 +19,10 @@ if (array_key_exists("filter", $_GET)) {
     $myJsonResult = GameFilterGenre($myDbConn, $_SESSION['genre']);
 }
 
+if(array_key_exists('id', $_GET)){
+    $myJsonResult = GetGameById($myDbConn, $_SESSION['id']);
+}
+
 if ($myJsonResult) {
     // Loop through records and get json
     while ($row = mysqli_fetch_array($myJsonResult)) {

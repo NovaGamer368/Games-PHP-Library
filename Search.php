@@ -24,7 +24,7 @@ if (isset($_POST['selectedIndex'])) {
                 <input type="text" id="GameSearchInput" placeholder="Search"/>
                 <button type="submit" name="selectedIndex" onclick="GSI()" value="1">Search Games!</button>
                 <div>
-                    <!--allows user to look for games of a specific genre/made by a certain company-->
+                    <!--allows user to look for games of a specific genre-->
                     <label for="Filter">Filter</label>
                     <select id="FilterOptions">
                         <?php
@@ -48,8 +48,7 @@ if (isset($_POST['selectedIndex'])) {
 
 <script>
     //searches for game
-    async function GSI() {
-        
+    async function GSI() {        
         var request = new XMLHttpRequest();
         if (document.getElementById("GameSearchInput").value) {
             var gsi = document.getElementById("GameSearchInput").value;

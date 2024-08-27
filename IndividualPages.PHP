@@ -56,24 +56,24 @@ if (isset($_POST['selectedIndex'])) {
 </center>
 
 <?php
-switch ($selectedIndex) {
-    //switch case that allows the user to look at the 3 different "individual" pages
-    case 1:
-        include_once "./IndividualGamesPages/IndividualPage1.php";
-        break;
-    case 2:
-        include_once "./IndividualGamesPages/IndividualPage2.php";
-        break;
-    case 3:
-        include_once "./IndividualGamesPages/IndividualPage3.php";
-        break;
-    case 4:
-        include_once "./IndividualGamesPages/imageGallery/ImageGallery.php";
-        break;
-    case 5:
-        include_once "./IndividualGamesPages/DynamicPage.php";
-        break;
-}
+//switch ($selectedIndex) {
+//    //switch case that allows the user to look at the 3 different "individual" pages
+//    case 1:
+//        include_once "./IndividualGamesPages/IndividualPage1.php";
+//        break;
+//    case 2:
+//        include_once "./IndividualGamesPages/IndividualPage2.php";
+//        break;
+//    case 3:
+//        include_once "./IndividualGamesPages/IndividualPage3.php";
+//        break;
+//    case 4:
+//        include_once "./IndividualGamesPages/imageGallery/ImageGallery.php";
+//        break;
+//    case 5:
+    include_once "./IndividualGamesPages/DynamicPage.php";
+        //break;
+//}
 
 include_once "./Front-end/Footer.php";
 ?>
