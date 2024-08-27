@@ -1,7 +1,3 @@
-<?php
-include_once "./Front-end/Header.php"
-?>
-
 <!--a page for this game alone-->
 <h2>Cuphead</h2>
 
@@ -19,7 +15,3 @@ include_once "./Front-end/Header.php"
 <div/>
 <p>Platforms and Avalability:  PS4, Xbox, Windows, Nintendo switch, mac, Steam, GOG.com</p>
  <p>* = not entirely sure</p>
-
-<?php
-include_once "./Front-end/Footer.php"
-    ?>

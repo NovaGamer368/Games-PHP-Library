@@ -1,4 +1,3 @@
-<select id="FilterOptions"></select>
 <script>
     // Create a new XMLHttpRequest object
     const request = new XMLHttpRequest();
@@ -29,9 +28,10 @@
                 myReturn += "<option>" + myData[index].Genre + "</option>";
             }
             //myReturn += "</>";
-            document.getElementById("FilterOptions").innerHTML = myReturn; // Display table
-        } else {
-            document.getElementById("A").innerHTML = "Failed to load data. Status: " + request.status;
+            //document.getElementById("FilterOptions").innerHTML = myReturn; // Display table
         }
+        //else {
+        //    document.getElementById("A").innerHTML = "Failed to load data. Status: " + request.status;
+        //}
     }
 </script>

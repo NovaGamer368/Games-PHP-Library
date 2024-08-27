@@ -1,7 +1,3 @@
-<?php
-include_once "./Front-end/Header.php"
-?>
-
 <!--a page for this game alone-->
 <h2>Final Fantasy 14</h2>
 
@@ -20,8 +16,3 @@ include_once "./Front-end/Header.php"
 <p>Platforms:  PS5,PS4, Xbox Series X/S, Windows, Mac</p>
 <p>Avalable on: Steam, Square Enix Store, finalfantasyxiv.com</p>
  <p>* = not entirely sure</p>
-
-
-<?php
-include_once "./Front-end/Footer.php"
-    ?>

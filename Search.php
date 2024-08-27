@@ -1,5 +1,6 @@
 <?php
 include_once "./Front-end/Header.php";
+include_once "./Front-end/Games/Filter.php";
 
 // Check if form is submitted and get the selected index from POST data
 if (isset($_POST['selectedIndex'])) {
