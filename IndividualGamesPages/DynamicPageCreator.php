@@ -1,5 +1,7 @@
+<p id="jsonData">No Games found!</p>
 <script>
     const request = new XMLHttpRequest();
+    const imageRequest = new XMLHttpRequest();
 
     // Don't run until the page is loaded and ready
     window.onload = function () {
@@ -21,11 +23,15 @@
             let myReturn = "<center>";
             myResponse = request.responseText;
             myData = JSON.parse(myResponse);
-            for (let index in myData) {
-                "<h3>" + myData[index].Name + "</h3>"
-            }
+            myReturn += "<img height='700px' src='" + myData.b[0].gameImage + "'>" +
+                "<h3>" + myData.a[0].Name + "</h3>" +
+                "<p>Creator: " + myData.a[0].Creator + "</p>" +
+                "<p>Genre: " + myData.a[0].Genre + "</p>" +
+                "<p>Description: " + myData.a[0].Description + "</p>"
             myReturn += "</center>";
             document.getElementById("jsonData").innerHTML = myReturn; // Display table
+        } else {
+            document.getElementById("A").innerHTML = "Failed to load data. Status: " + request.status;
         }
     }
 </script>

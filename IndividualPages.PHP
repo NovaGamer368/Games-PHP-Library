@@ -45,35 +45,35 @@ if (isset($_POST['selectedIndex'])) {
             
             <!--3 buttons that load the 3 individual pages-->
             <div>
-                <button type="submit" name="selectedIndex"  value="1">Page 1</button>
-                <button type="submit" name="selectedIndex" value="2">Page 2</button>
-                <button type="submit" name="selectedIndex" value="3">Page 3 </button>
-                <button type="submit" name="selectedIndex" value="4">Image Gallery</button>
-                <button type="submit" name="selectedIndex" value="5">Dynamic</button>
+                <button type="submit" name="selectedIndex" value="1">Dynamic</button>
+                <button type="submit" name="selectedIndex" value="2">Page 1</button>
+                <button type="submit" name="selectedIndex" value="3">Page 2</button>
+                <button type="submit" name="selectedIndex" value="4">Page 3 </button>
+                <button type="submit" name="selectedIndex" value="5">Image Gallery</button>
             </div>
         </form>
     </div>
 </center>
 
 <?php
-//switch ($selectedIndex) {
-//    //switch case that allows the user to look at the 3 different "individual" pages
-//    case 1:
-//        include_once "./IndividualGamesPages/IndividualPage1.php";
-//        break;
-//    case 2:
-//        include_once "./IndividualGamesPages/IndividualPage2.php";
-//        break;
-//    case 3:
-//        include_once "./IndividualGamesPages/IndividualPage3.php";
-//        break;
-//    case 4:
-//        include_once "./IndividualGamesPages/imageGallery/ImageGallery.php";
-//        break;
-//    case 5:
-    include_once "./IndividualGamesPages/DynamicPage.php";
-        //break;
-//}
+switch ($selectedIndex) {
+    //switch case that allows the user to look at the 3 different "individual" pages
+    case 1:
+        include_once "./IndividualGamesPages/DynamicPage.php";
+        break;
+    case 2:
+        include_once "./IndividualGamesPages/IndividualPage1.php";
+        break;
+    case 3:
+        include_once "./IndividualGamesPages/IndividualPage2.php";
+        break;
+    case 4:
+        include_once "./IndividualGamesPages/IndividualPage3.php";
+        break;
+    case 5:
+        include_once "./IndividualGamesPages/imageGallery/ImageGallery.php";
+        break;
+}
 
 include_once "./Front-end/Footer.php";
 ?>

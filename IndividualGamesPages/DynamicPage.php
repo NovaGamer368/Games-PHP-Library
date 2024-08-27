@@ -5,7 +5,6 @@ if (isset($_POST['currentGameId'])) {
     $currentGameId = 1;
 }
 ?>
-<h2>Final Fantasy 14</h2>
 <center>
     <form method="post" class="dynamicGamePage">
         <div>
@@ -27,7 +26,6 @@ if (isset($_POST['currentGameId'])) {
 <?php
     if($currentGameId) {
         include_once "./IndividualGamesPages/DynamicPageCreator.php";
-        echo "<h5>working</h5>";
     } else {
         echo "<h5>not working</h5>";
     }

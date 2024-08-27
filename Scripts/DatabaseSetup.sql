@@ -48,7 +48,7 @@ VALUES ("Minecraft", "Mojang", "Sandbox",
 "Minecraft is a sandbox game where players can build and explore their own virtual worlds. Gather resources, craft tools, and create structures to survive and thrive in both creative and survival modes.");
 
 INSERT INTO GamesTable (Name, Creator, Genre, Description)
-VALUES ("Overwatch", "Blizzard Entertainment", "First-Person Shooter", 
+VALUES ("Overwatch 2", "Blizzard Entertainment", "First-Person Shooter", 
 "Overwatch is a team-based shooter where players select from a roster of unique heroes, each with their own abilities and roles. Teamwork and strategy are key as you work together to complete objectives and secure victories.");
 
 INSERT INTO GamesTable (Name, Creator, Genre, Description)
@@ -208,12 +208,26 @@ SELECT JSON_OBJECT(
 FROM GamesTable AS g;
 
 
+
 drop table if exists ImagesTable;
 
 create table if not exists ImagesTable(
 	imageId int NOT NULL AUTO_INCREMENT,
-	gameImage blob NOT NULL,
-	gameName varchar(100) NOT NULL,,
-    gameId int NOT NULL REFERENCES GamesTable(gameID),
-	PRIMARY KEY (imageId)
+	gameImage varchar(200) NOT NULL,
+	gameName varchar(100) NOT NULL,
+    gameId int NOT NULL,
+	PRIMARY KEY (imageId),
+    FOREIGN KEY (gameId) REFERENCES GamesTable(gameId)
 );
+
+INSERT INTO ImagesTable (gameImage, gameName, gameId)
+VALUES ("https://m.media-amazon.com/images/M/MV5BMmRiNmY2ZGYtMWVmYy00MTI0LTk1YmItZmU0NjZiMWNlYjlhXkEyXkFqcGdeQXVyMTk2OTAzNTI@._V1_FMjpg_UX1000_.jpg", "Final Fantasy 14", 1);
+
+INSERT INTO ImagesTable (gameImage, gameName, gameId)
+VALUES ("https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png", "The Witcher 3: Wild Hunt", 2);
+
+INSERT INTO ImagesTable (gameImage, gameName, gameId)
+VALUES ("https://assets-prd.ignimgs.com/2021/12/14/minecraft-1639513933156.jpg", "Minecraft", 3);
+
+INSERT INTO ImagesTable (gameImage, gameName, gameId)
+VALUES ("https://www.si.com/esports/.image/ar_1.91%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_1200/MTk4NDc1MDg5OTI5MzgxNDIy/overwatch-2-splash-art.jpg", "Overwatch 2", 4);

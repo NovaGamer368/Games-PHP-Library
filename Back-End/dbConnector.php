@@ -136,12 +136,30 @@ function GameFilterGenre($dbConn, $genre)
 }
 
 function GetGameById($dbConn, $id) {
-    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Name', g.Name, 'Creator', g.Creator, 'Genre', g.Genre, 'Description', g.Description) FROM GamesTable AS g WHERE gameId = ?");
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Id', g.gameId,'Name', g.Name, 'Creator', g.Creator, 'Genre', g.Genre, 'Description', g.Description) FROM GamesTable AS g WHERE gameId = ?");
     $stmt->bind_param("s", $id);
     $stmt->execute();
     // Get the result
     $result = $stmt->get_result();
     return $result;
+}
+
+function GetGameImage($dbConn, $id) {
+    $stmt = $dbConn->prepare("SELECT JSON_OBJECT('Id', g.gameId,'gameImage', g.gameImage) FROM ImagesTable AS g WHERE gameId = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+    return $result;
+}
+
+function GetAllImages($dbConn) {
+    $query = "SELECT JSON_OBJECT(
+    'Id', g.imageId,
+    'gameImage', g.gameImage,
+    'gameId',g.gameId) 
+    FROM ImagesTable AS g;";
+    return @mysqli_query($dbConn, $query);
 }
 
 ?>

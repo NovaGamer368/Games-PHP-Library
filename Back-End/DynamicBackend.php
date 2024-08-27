@@ -4,7 +4,11 @@ header('Content-Type: application/json');
 $response = array();
 if (array_key_exists("id", $_GET)) {
     if(isset($_SESSION["id"])) {
-        $_SESSION["id"] = $_SESSION["id"] + 1;
+        if ($_SESSION["id"] == 4) {
+            $_SESSION["id"] = 1;
+        } else {
+            $_SESSION["id"] = $_SESSION["id"] + 1;
+        }        
     } else {
         $_SESSION["id"] = 1;
     }
